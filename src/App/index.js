@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
+import AppLayout from './AppLayout';
 import WelcomeMessage from '../Components/WelcomeMessage';
 
 function App() {
   return (
-    <div>
+    <AppLayout>
       <WelcomeMessage/>
-    </div>
+    </AppLayout>
   );
 }
 
