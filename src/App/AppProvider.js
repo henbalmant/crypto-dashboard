@@ -1,5 +1,8 @@
 import React from 'react';
 
+const Poloniex = require('poloniex-api-node');
+let poloniex = new Poloniex();
+
 export const AppContext = React.createContext();
 
 export class AppProvider extends React.Component {
@@ -11,6 +14,15 @@ export class AppProvider extends React.Component {
       setPage: this.setPage,
       confirmFavorites: this.confirmFavorites,
     }
+  }
+
+  componentDidMount = () => {
+    this.fetchCoins();
+  }
+
+  fetchCoins = async () => {
+    let coinList = (await poloniex.returnCurrencies());
+    this.setState({coinList});
   }
 
   confirmFavorites = () => {
