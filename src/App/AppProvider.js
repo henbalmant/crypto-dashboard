@@ -13,6 +13,7 @@ export class AppProvider extends React.Component {
       ...this.savedSettings(),
       setPage: this.setPage,
       confirmFavorites: this.confirmFavorites,
+      coinList: {},
     }
   }
 
