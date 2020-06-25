@@ -15,6 +15,7 @@ export class AppProvider extends React.Component {
       page: 'dashboard',
       ...this.savedSettings(),
       setPage: this.setPage,
+      setFilterCoins: this.setFilterCoins,
       confirmFavorites: this.confirmFavorites,
       addCoin: this.addCoin,
       removeCoin: this.removeCoin,
@@ -39,6 +40,8 @@ export class AppProvider extends React.Component {
   }
 
   isInFavorites = key => _.includes(this.state.favorites, key)
+
+  setFilterCoins = (filteredCoins) => this.setState({filteredCoins});
 
   componentDidMount = () => {
     this.fetchCoins();
