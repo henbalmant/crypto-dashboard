@@ -14,4 +14,14 @@ export const SelectableTile = styled(Tile)`
   }
 `
 
-export default Tile;
+export const DeletableTile = styled(SelectableTile)`
+  &:hover {
+    cursor: pointer;
+    ${redBoxShadow}
+  }
+`
+
+export const DisabledTile = styled(Tile)`
+  pointer-events: none;
+  opacity: 0.4;
+`
